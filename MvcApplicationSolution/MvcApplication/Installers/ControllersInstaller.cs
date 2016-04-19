@@ -28,8 +28,8 @@ namespace MvcApplication.Installers
                     .LifestyleTransient());
 
             container.Register(
-                    Component.For<IViewModelBuilder>()
-                    .ImplementedBy<ViewModelBuilder>()
+                    Component.For<IViewModelBuilder<DataViewModel, int>>()
+                    .ImplementedBy<DataViewModelBuilder>()
                     .LifestyleTransient());
 
             container.Register(

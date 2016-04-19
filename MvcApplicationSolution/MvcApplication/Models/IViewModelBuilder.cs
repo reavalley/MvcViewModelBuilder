@@ -1,7 +1,7 @@
 ﻿namespace MvcApplication.Models
 {
-    public interface IViewModelBuilder
+    public interface IViewModelBuilder<out TViewModel, in TInput> where TViewModel : IViewModel
     {
-        T Build<T>() where T : IViewModel;
+        TViewModel Build(TInput parameters);
     }
 }

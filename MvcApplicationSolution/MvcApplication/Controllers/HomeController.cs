@@ -6,16 +6,17 @@ namespace MvcApplication.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly IViewModelBuilder _viewModelBuilder;
+        private readonly IViewModelBuilder<DataViewModel, int> _viewModelBuilder;
 
-        public HomeController(IViewModelBuilder viewModelBuilder)
+        public HomeController(IViewModelBuilder<DataViewModel, int> viewModelBuilder)
         {
             _viewModelBuilder = viewModelBuilder;
         }
 
         public ActionResult Index()
         {
-            var viewModel = _viewModelBuilder.Build<DataViewModel>();
+            var parameters = new DataViewModelParameters { Top = 2};
+            var viewModel = _viewModelBuilder.Build(2);
             return View(viewModel);
         }
 
