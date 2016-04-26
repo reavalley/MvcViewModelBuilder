@@ -2,5 +2,6 @@
 {
     public interface IViewModel
     {
+        ViewModelType ViewModelType { get; set; }
     }
 }

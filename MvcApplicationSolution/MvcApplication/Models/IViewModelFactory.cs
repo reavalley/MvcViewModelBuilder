@@ -2,6 +2,7 @@
 {
     public interface IViewModelFactory
     {
-        T CreateViewModel<T>() where T : IViewModel;
+        //T CreateViewModel<T>() where T : IViewModel;
+        IViewModel GetViewModel(ViewModelType viewModelType);
     }
 }

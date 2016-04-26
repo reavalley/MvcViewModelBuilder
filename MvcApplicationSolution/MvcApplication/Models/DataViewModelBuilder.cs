@@ -16,7 +16,7 @@ namespace MvcApplication.Models
 
         public DataViewModel Build(int parameters)
         {
-            var viewModel = _viewModelFactory.CreateViewModel<DataViewModel>();
+            var viewModel = _viewModelFactory.GetViewModel(ViewModelType.Data) as DataViewModel;
             viewModel.Data = _testService.GetData().Take(parameters);
             return viewModel;
         }
